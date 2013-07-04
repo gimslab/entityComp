@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile 'commons-lang:commons-lang:20030203.000129'
+	testCompile 'junit:junit:4.11'
+}
+
+
+task hello << {
+    println "project.name = ${project.name}"
+    println "project.projectDir = ${project.projectDir}"
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir "${project.projectDir}/src/main/java"
+        }
+    }
+    test {
+    	java {
+    		srcDir "${project.projectDir}/src/test/java"
+    	}
+    }
+}
