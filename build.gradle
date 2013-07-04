@@ -1,12 +1,14 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	compile 'commons-lang:commons-lang:20030203.000129'
+	compile 'org.apache.commons:commons-lang3:3.1'
 	testCompile 'junit:junit:4.11'
 }
 
